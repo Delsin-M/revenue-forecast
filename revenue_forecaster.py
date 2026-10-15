@@ -13,6 +13,8 @@ DEFAULT = pd.DataFrame([
     ['Bid Program Beta','Bid',900000,'2026-04-01','2027-03-31',0.65,'AFRL'],
     ['Bid Program Gamma','Bid',600000,'2026-07-01','2027-06-30',0.35,'ONR'],
 ], columns=REQUIRED)
+DEFAULT["Start Date"] = pd.to_datetime(DEFAULT["Start Date"])
+DEFAULT["End Date"] = pd.to_datetime(DEFAULT["End Date"])
 
 st.title('Revenue Forecasting Simulator')
 st.caption('Linear monthly spend allocation with Monte Carlo simulation of bid wins and losses.')
